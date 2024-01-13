@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import app from './app'
 import config from './config'
-import logger from './shared/logger'
+import { logger, errorLogger } from './shared/logger'
 
 async function main() {
   try {
@@ -15,7 +15,7 @@ async function main() {
       )
     })
   } catch (error) {
-    logger.error('Database Connect Fail', error)
+    errorLogger.error('Database Connect Fail', error)
   }
 }
 
