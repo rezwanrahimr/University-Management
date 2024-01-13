@@ -3,5 +3,8 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {},
   "editor.language.colorizedBracketPairs": [],
-  "editor.rulers": []
+  "editor.rulers": [],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
