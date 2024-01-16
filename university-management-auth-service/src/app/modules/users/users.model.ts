@@ -7,7 +7,7 @@ const userSchema = new Schema<IUser>(
   {
     id: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
     },
     role: {
@@ -16,7 +16,7 @@ const userSchema = new Schema<IUser>(
     },
     password: {
       type: String,
-      required: true,
+      // required: true,
     },
   },
   { timestamps: true },

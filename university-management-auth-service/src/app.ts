@@ -1,19 +1,24 @@
-import express, { urlencoded } from "express";
-import usersRouter from "./app/modules/users/users.route";
-import cors from "cors";
-const app = express();
+import express, { urlencoded } from 'express'
+import usersRouter from './app/modules/users/users.route'
+import cors from 'cors'
+import globalErrorHandler from './app/middlewares/globalErrorHandler'
+const app = express()
 
 // middleware
-app.use(cors());
+app.use(cors())
+
 // parser
-app.use(express.json());
-app.use(urlencoded({ extended: true }));
+app.use(express.json())
+app.use(urlencoded({ extended: true }))
 
 // application route
 app.use('/api/v1/users', usersRouter)
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.get('/', (req, res) => {
+  res.send('University Management Auth Service is Running...!')
+})
 
-export default app;
+// Global Errors Handler
+app.use(globalErrorHandler);
+
+export default app
