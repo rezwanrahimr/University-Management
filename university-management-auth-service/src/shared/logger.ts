@@ -1,11 +1,15 @@
 import { createLogger, format, transports } from 'winston';
-const { combine, timestamp, label, printf } = format;
+const { combine, timestamp, label, printf, prettyPrint } = format;
+import DailyRotateFile from 'winston-daily-rotate-file';
 import path from 'path';
-
 
 // Formatter
 const myFormat = printf(({ level, message, label, timestamp }) => {
-    return `${timestamp} [${label}] ${level}: ${message}`;
+    const date = new Date(timestamp);
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    return `${date.toString()} ${hours} ${minutes} ${seconds} [${label}] ${level}: ${message}`;
 });
 
 
@@ -14,12 +18,18 @@ const logger = createLogger({
     format: combine(
         label({ label: 'right meow!' }),
         timestamp(),
-        myFormat
+        myFormat, prettyPrint()
     ),
     transports: [
 
         new transports.Console(),
-        new transports.File({ filename: path.join(process.cwd(), 'logs', 'winston', 'success.log'), level: 'info' }),
+        new DailyRotateFile({
+            filename: path.join(process.cwd(), 'logs', 'winston', 'success', 'University-Auth-Success-%DATE%.log'),
+            datePattern: 'YYYY-MM-DD-HH',
+            zippedArchive: true,
+            maxSize: '20m',
+            maxFiles: '14d'
+        })
 
     ],
 });
@@ -29,12 +39,17 @@ const errorLogger = createLogger({
     format: combine(
         label({ label: 'right meow!' }),
         timestamp(),
-        myFormat
-    ),
+        myFormat, prettyPrint()),
     transports: [
 
         new transports.Console(),
-        new transports.File({ filename: path.join(process.cwd(), 'logs', 'winston', 'error.log'), level: 'error' }),
+        new DailyRotateFile({
+            filename: path.join(process.cwd(), 'logs', 'winston', 'errors', 'University-Auth-Error-%DATE%.log'),
+            datePattern: 'YYYY-MM-DD-HH',
+            zippedArchive: true,
+            maxSize: '20m',
+            maxFiles: '14d'
+        })
 
     ],
 });
