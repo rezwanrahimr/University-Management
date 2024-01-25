@@ -39,6 +39,11 @@
             "date": 1705831956816,
             "name": "F:\\Level2\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-01-21-16.log",
             "hash": "d493b02b85e0429af8149e5b70a9f168edd631910bde41cb80612f654aad97da"
+        },
+        {
+            "date": 1706166163329,
+            "name": "F:\\Level2\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-01-25-13.log",
+            "hash": "923eb5d0d71e7cd470e3b0a36a9ec94398070ade077168942fd0b4f54a6fff6b"
         }
     ],
     "hashType": "sha256"

@@ -1,25 +1,17 @@
-<<<<<<< HEAD
-import { ErrorRequestHandler } from "express";
-const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
-    res.status(400).json({ error: error });
-=======
 import { NextFunction, Request, Response } from "express";
 import config from "../../config";
 import { IGenericErrorMessage } from "../../interfaces/error";
 import handleValidationError from "../../errors/handleValidationError";
 import ApiError from "../../errors/ApiError";
 import { error } from "console";
-const globalErrorHandler = (err, req: Request, res: Response, next: NextFunction) => {
-    res.status(400).json({ error: err });
->>>>>>> db6490a04aec8b709847d62e18e335eb3dcb10ab
-    next();
+const globalErrorHandler = (errors, req: Request, res: Response, next: NextFunction) => {
 
     let statusCode = 500;
     let message;
     let errorMessage: IGenericErrorMessage[] = [];
 
-    if (err.name === "ValidationError") {
-        const simplifiedError = handleValidationError(err);
+    if (errors.name === "ValidationError") {
+        const simplifiedError = handleValidationError(errors);
         statusCode = simplifiedError.statusCode;
         message = simplifiedError.message;
         errorMessage = simplifiedError.errorMessage;
@@ -49,7 +41,7 @@ const globalErrorHandler = (err, req: Request, res: Response, next: NextFunction
         success: false,
         message,
         errorMessage,
-        stack: config.env !== 'production' ? err?.stack : undefined
+        stack: config.env !== 'production' ? errors?.stack : undefined
     })
 }
 
