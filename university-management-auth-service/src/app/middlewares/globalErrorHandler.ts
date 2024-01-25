@@ -1,10 +1,13 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 import config from "../../config";
 import { IGenericErrorMessage } from "../../interfaces/error";
 import handleValidationError from "../../errors/handleValidationError";
 import ApiError from "../../errors/ApiError";
 import { error } from "console";
-const globalErrorHandler = (errors, req: Request, res: Response, next: NextFunction) => {
+import { errorLogger } from "../../shared/logger";
+const globalErrorHandler = (errors, req: Request, res: Response) => {
+
+    config.env === "development" ? console.log("Global Error Handler", errors) : errorLogger.error("Global Error Handler", errors)
 
     let statusCode = 500;
     let message;
