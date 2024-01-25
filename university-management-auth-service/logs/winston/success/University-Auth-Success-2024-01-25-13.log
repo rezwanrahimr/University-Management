@@ -1,0 +1,60 @@
+{
+  message: 'University Management Auth Service Database Connect Successfully',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:02:44.235Z'
+}
+{
+  message: 'University Management Auth Service listening on port 5000',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:02:44.252Z'
+}
+{
+  message: 'University Management Auth Service Database Connect Successfully',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:03:21.600Z'
+}
+{
+  message: 'University Management Auth Service listening on port 5000',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:03:21.610Z'
+}
+{
+  message: 'University Management Auth Service Database Connect Successfully',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:09:48.989Z'
+}
+{
+  message: 'University Management Auth Service listening on port 5000',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:09:48.996Z'
+}
+{
+  message: 'University Management Auth Service Database Connect Successfully',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:10:31.276Z'
+}
+{
+  message: 'University Management Auth Service listening on port 5000',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:10:31.293Z'
+}
+{
+  message: 'University Management Auth Service Database Connect Successfully',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:11:05.411Z'
+}
+{
+  message: 'University Management Auth Service listening on port 5000',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-01-25T07:11:05.419Z'
+}
