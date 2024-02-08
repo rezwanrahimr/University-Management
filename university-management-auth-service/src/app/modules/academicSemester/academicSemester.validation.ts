@@ -3,13 +3,11 @@ import { academicSemesterCode, academicSemesterMonth, academicSemesterTitle } fr
 
 const createAcademicSemesterZodSchema = z.object({
     body: z.object({
-        user: z.object({
-            title: z.enum([...academicSemesterTitle] as [string, ...string[]], { required_error: 'Title is Require' }),
-            year: z.number({ required_error: 'Year is Require' }),
-            code: z.enum([...academicSemesterCode] as [string, ...string[]], { required_error: 'Code is Require' }),
-            startMonth: z.enum([...academicSemesterMonth] as [string, ...string[]], { required_error: 'Start-Month is Require' }),
-            endMonth: z.enum([...academicSemesterMonth] as [string, ...string[]], { required_error: 'End-Month is Required' })
-        })
+        title: z.enum([...academicSemesterTitle] as [string, ...string[]], { required_error: 'Title is Require' }),
+        year: z.number({ required_error: 'Year is Require' }),
+        code: z.enum([...academicSemesterCode] as [string, ...string[]], { required_error: 'Code is Require' }),
+        startMonth: z.enum([...academicSemesterMonth] as [string, ...string[]], { required_error: 'Start-Month is Require' }),
+        endMonth: z.enum([...academicSemesterMonth] as [string, ...string[]], { required_error: 'End-Month is Required' })
     })
 })
 
