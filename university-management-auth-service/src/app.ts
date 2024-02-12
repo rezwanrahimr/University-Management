@@ -1,7 +1,7 @@
 import express, { urlencoded } from 'express'
-import usersRouter from './app/modules/users/users.route'
 import cors from 'cors'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
+import { UserRoutes } from './app/modules/users/user.route'
 const app = express()
 
 // middleware
@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(urlencoded({ extended: true }))
 
 // application route
-app.use('/api/v1/users', usersRouter)
+app.use('/api/v1/users', UserRoutes)
 
 app.get('/', (req, res) => {
   res.send('University Management Auth Service is Running...!')
