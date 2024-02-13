@@ -1,10 +1,7 @@
-import { NextFunction } from 'express'
+import { NextFunction, Request, Response } from 'express'
 import { UserService } from './user.service'
 
-
 const createUser = async (req: Request, res: Response, next: NextFunction) => {
-
-
   try {
     const { user } = req.body
     const result = await UserService.createUser(user)
@@ -14,8 +11,8 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
       date: result,
     })
   } catch (error) {
-    console.log("Check 1");
-    next(error);
+    console.log('Check 1')
+    next(error)
   }
 }
 
