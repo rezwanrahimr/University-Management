@@ -10,16 +10,41 @@ const createAcademicSemester = catchAsync(
     const result =
       await AcademicSemesterService.createAcademicSemester(academicSemesterData)
 
-    next()
-
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Academic Semester create success',
       data: result,
     })
-    res.status(200).json()
+    next()
   },
 )
 
-export const AcademicSemesterController = { createAcademicSemester }
+const getAllSemesters = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const paginationOptionals = {
+      page: req.query.page,
+      limit: req.query.limit,
+      sortBy: req.query.sortBy,
+      sortOrder: req.query.sortOrder,
+    }
+
+    console.log(paginationOptionals)
+
+    // const result =
+    //   await AcademicSemesterService.getAllAcademicSemesters(paginationOptionals)
+
+    // sendResponse(res, {
+    //   statusCode: httpStatus.OK,
+    //   success: true,
+    //   message: 'Academic Semester Retrieved success',
+    //   data: result,
+    // })
+    // next()
+  },
+)
+
+export const AcademicSemesterController = {
+  createAcademicSemester,
+  getAllSemesters,
+}
