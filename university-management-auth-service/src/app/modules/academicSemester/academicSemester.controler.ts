@@ -4,12 +4,12 @@ import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import httpStatus from 'http-status'
 
+// Create Academic Semester
 const createAcademicSemester = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { ...academicSemesterData } = req.body
     const result =
       await AcademicSemesterService.createAcademicSemester(academicSemesterData)
-
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
@@ -19,6 +19,7 @@ const createAcademicSemester = catchAsync(
     next()
   },
 )
+
 
 const getAllSemesters = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
