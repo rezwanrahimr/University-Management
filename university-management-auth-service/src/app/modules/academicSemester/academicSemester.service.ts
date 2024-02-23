@@ -5,7 +5,6 @@ import { IAcademicSemester } from './academicSemester.interface'
 import { AcademicSemester } from './academicSemester.model'
 import { IPagination } from '../../../interfaces/paginations'
 
-
 // create academic semester service
 const createAcademicSemester = async (
   payload: IAcademicSemester,
@@ -17,8 +16,12 @@ const createAcademicSemester = async (
   return result
 }
 
-const getAllAcademicSemesters = async (paginationOptions: IPagination) => {}
+const getAllAcademicSemesters = async (paginationOptions: IPagination) => {
+  const { page = 1, limit = 10 } = paginationOptions
+  const skip = (page - 1) * limit
+}
 
 export const AcademicSemesterService = {
   createAcademicSemester,
-  getAllAcademicSemesters}
+  getAllAcademicSemesters,
+}
