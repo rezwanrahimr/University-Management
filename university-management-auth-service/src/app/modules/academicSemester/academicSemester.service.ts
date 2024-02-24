@@ -4,6 +4,7 @@ import { academicSemesterTitleCodeMapper } from './academicSemester.constant'
 import { IAcademicSemester } from './academicSemester.interface'
 import { AcademicSemester } from './academicSemester.model'
 import { IPagination } from '../../../interfaces/paginations'
+import { IGenericResponse } from '../../../interfaces/common'
 
 // create academic semester service
 const createAcademicSemester = async (
@@ -16,9 +17,23 @@ const createAcademicSemester = async (
   return result
 }
 
-const getAllAcademicSemesters = async (paginationOptions: IPagination) => {
+const getAllAcademicSemesters = async (
+  paginationOptions: IPagination,
+): Promise<IGenericResponse<IAcademicSemester[]>> => {
   const { page = 1, limit = 10 } = paginationOptions
   const skip = (page - 1) * limit
+
+  const result = await AcademicSemester.find().sort().skip(skip).limit(limit)
+  const total = await AcademicSemester.countDocuments()
+
+  return {
+    meta: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  }
 }
 
 export const AcademicSemesterService = {
