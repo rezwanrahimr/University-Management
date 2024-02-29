@@ -1,7 +1,10 @@
 import httpStatus from 'http-status'
 import ApiError from '../../../errors/ApiError'
 import { academicSemesterTitleCodeMapper } from './academicSemester.constant'
-import { IAcademicSemester } from './academicSemester.interface'
+import {
+  IAcademicSemester,
+  IAcademicSemesterFilters,
+} from './academicSemester.interface'
 import { AcademicSemester } from './academicSemester.model'
 import { IPagination } from '../../../interfaces/paginations'
 import { IGenericResponse } from '../../../interfaces/common'
@@ -19,9 +22,22 @@ const createAcademicSemester = async (
   return result
 }
 
+// get academic semester service
 const getAllAcademicSemesters = async (
+  filters: IAcademicSemesterFilters,
   paginationOptions: IPagination,
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
+  const { searchTerm } = filters
+  const andCondition = [
+    {
+      $or: [
+        { title: { $regex: searchTerm, $options: 'i' } },
+        { code: { $regex: searchTerm, $options: 'i' } },
+        { year: { $regex: searchTerm, $options: 'i' } },
+      ],
+    },
+  ]
+
   const { page, limit, skip, sortBy, sortOrder } =
     PaginationHelper.calculatingPagination(paginationOptions)
 
@@ -29,9 +45,7 @@ const getAllAcademicSemesters = async (
   if (sortBy && sortOrder) {
     sortCondition[sortBy] = sortOrder
   }
-
-  console.log('test code', page, limit, skip, sortBy, sortOrder)
-  const result = await AcademicSemester.find()
+  const result = await AcademicSemester.find({ $and: andCondition })
     .sort(sortCondition)
     .skip(skip)
     .limit(limit)
