@@ -1,6 +1,9 @@
 import httpStatus from 'http-status'
 import ApiError from '../../../errors/ApiError'
-import { academicSemesterTitleCodeMapper } from './academicSemester.constant'
+import {
+  academicSemesterSearchableFields,
+  academicSemesterTitleCodeMapper,
+} from './academicSemester.constant'
 import {
   IAcademicSemester,
   IAcademicSemesterFilters,
@@ -27,37 +30,58 @@ const getAllAcademicSemesters = async (
   filters: IAcademicSemesterFilters,
   paginationOptions: IPagination,
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
-  const { searchTerm } = filters
-  const andCondition = [
-    {
-      $or: [
-        { title: { $regex: searchTerm, $options: 'i' } },
-        { code: { $regex: searchTerm, $options: 'i' } },
-        { year: { $regex: searchTerm, $options: 'i' } },
-      ],
-    },
-  ]
+  try {
+    const { searchTerm, ...filtersData } = filters
 
-  const { page, limit, skip, sortBy, sortOrder } =
-    PaginationHelper.calculatingPagination(paginationOptions)
+    const andCondition = []
+    if (searchTerm) {
+      andCondition.push({
+        $or: academicSemesterSearchableFields.map(field => ({
+          [field]: { $regex: searchTerm, $options: 'i' },
+        })),
+      })
+    }
 
-  const sortCondition: { [key: string]: SortOrder } = {}
-  if (sortBy && sortOrder) {
-    sortCondition[sortBy] = sortOrder
-  }
-  const result = await AcademicSemester.find({ $and: andCondition })
-    .sort(sortCondition)
-    .skip(skip)
-    .limit(limit)
-  const total = await AcademicSemester.countDocuments()
+    if (Object.keys(filtersData).length) {
+      andCondition.push({
+        $and: Object.entries(filtersData).map(([field, value]) => ({
+          [field]: value,
+        })),
+      })
+    }
 
-  return {
-    meta: {
-      page,
-      limit,
-      total,
-    },
-    data: result,
+    const { page, limit, skip, sortBy, sortOrder } =
+      PaginationHelper.calculatingPagination(paginationOptions)
+
+    const sortCondition: { [key: string]: SortOrder } = {}
+    if (sortBy && sortOrder) {
+      sortCondition[sortBy] = sortOrder
+    }
+
+    let whereCondition = {}
+    if (andCondition.length > 0) {
+      whereCondition = { $and: andCondition }
+    }
+
+    const result = await AcademicSemester.find(whereCondition)
+      .sort(sortCondition)
+      .skip(skip)
+      .limit(limit)
+      .exec()
+
+    const total = await AcademicSemester.countDocuments(whereCondition)
+
+    return {
+      meta: {
+        page,
+        limit,
+        total,
+      },
+      data: result,
+    }
+  } catch (error) {
+    console.error('Error fetching academic semesters:', error)
+    throw new Error('Failed to fetch academic semesters')
   }
 }
 
