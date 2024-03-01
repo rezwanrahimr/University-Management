@@ -1,0 +1,18 @@
+{
+  message: 'UnHandle Rejection are detected,We are closing our server now ....',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-02-24T09:58:24.827Z'
+}
+{
+  stringValue: '""10""',
+  messageFormat: undefined,
+  kind: 'Number',
+  value: '"10"',
+  path: 'limit',
+  reason: undefined,
+  valueType: 'string',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-02-24T09:59:58.607Z'
+}
