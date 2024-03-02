@@ -6,6 +6,7 @@ import { ZodError } from 'zod'
 import handleZodError from '../../errors/handleZodError'
 import { IGenericErrorMessage } from '../../interfaces/error'
 import { errorLogger } from '../../shared/logger'
+import handleCastError from '../../errors/handleCastError'
 
 const globalErrorHandler: ErrorRequestHandler = (
   error,
@@ -28,7 +29,6 @@ const globalErrorHandler: ErrorRequestHandler = (
     errorMessages = simplifiedError.errorMessage
   } else if (error instanceof ZodError) {
     const simplifiedError = handleZodError(error)
-    console.log('simplifield error', simplifiedError)
     statusCode = simplifiedError.statusCode
     message = simplifiedError.message
     errorMessages = simplifiedError.errorMessages
@@ -43,6 +43,11 @@ const globalErrorHandler: ErrorRequestHandler = (
           },
         ]
       : []
+  } else if (error?.name === 'CastError') {
+    const simplifiedError = handleCastError(error)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errorMessages = simplifiedError.errorMessages
   } else if (error instanceof Error) {
     message = error?.message
     errorMessages = error?.message

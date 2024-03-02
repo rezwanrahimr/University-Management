@@ -26,15 +26,21 @@ const createAcademicSemester = catchAsync(
 // Get Academic Semester by ID
 const getSingleAcademicSemester = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const id = req.params.id
-    const result = await AcademicSemesterService.getSingleAcademicSemester(id)
-    sendResponse<IAcademicSemester[]>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Academic Semester Retrieved success',
-      data: result,
-    })
-    next()
+    try {
+      const id = req.params.id
+      const result = await AcademicSemesterService.getSingleAcademicSemester(id)
+
+      sendResponse<IAcademicSemester[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Semester Retrieved success',
+        data: result,
+      })
+
+      next() // Proceed to the next middleware
+    } catch (error) {
+      next() // Pass any errors to the global error handler
+    }
   },
 )
 
