@@ -25,6 +25,15 @@ const createAcademicSemester = async (
   return result
 }
 
+// update academic semester service
+const updateAcademicSemester = async (
+  id: string,
+  payload: Partial<IAcademicSemester>,
+) => {
+  const result = await AcademicSemester.findByIdAndUpdate(id, payload)
+  return result
+}
+
 // get single semester service
 const getSingleAcademicSemester = async (id: string) => {
   const result = await AcademicSemester.findById(id)
@@ -95,4 +104,5 @@ export const AcademicSemesterService = {
   createAcademicSemester,
   getAllAcademicSemesters,
   getSingleAcademicSemester,
+  updateAcademicSemester,
 }

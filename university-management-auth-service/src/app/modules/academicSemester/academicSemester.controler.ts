@@ -44,6 +44,28 @@ const getSingleAcademicSemester = catchAsync(
   },
 )
 
+// Update Academic Semester
+const updateAcademicSemester = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params
+      const { ...academicSemesterUpdateData } = req.body
+      const result = await AcademicSemesterService.updateAcademicSemester(
+        id,
+        academicSemesterUpdateData,
+      )
+      sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Semester update success',
+        data: result,
+      })
+      next()
+    } catch (error) {
+      next(error)
+    }
+  },
+)
 const getAllSemesters = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const filters = pick(req.query, academicSemesterFiltrableFields)
@@ -67,6 +89,7 @@ const getAllSemesters = catchAsync(
 
 export const AcademicSemesterController = {
   createAcademicSemester,
-  getAllSemesters,
   getSingleAcademicSemester,
+  updateAcademicSemester,
+  getAllSemesters,
 }
