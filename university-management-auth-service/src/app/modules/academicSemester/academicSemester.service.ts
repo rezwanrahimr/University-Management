@@ -25,6 +25,12 @@ const createAcademicSemester = async (
   return result
 }
 
+// get single semester service
+const getSingleAcademicSemester = async (id: string) => {
+  const result = await AcademicSemester.findById(id)
+  return result
+}
+
 // get academic semester service
 const getAllAcademicSemesters = async (
   filters: IAcademicSemesterFilters,
@@ -88,4 +94,5 @@ const getAllAcademicSemesters = async (
 export const AcademicSemesterService = {
   createAcademicSemester,
   getAllAcademicSemesters,
+  getSingleAcademicSemester,
 }

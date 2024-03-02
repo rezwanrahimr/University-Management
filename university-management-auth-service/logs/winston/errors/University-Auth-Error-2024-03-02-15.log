@@ -1,0 +1,96 @@
+{
+  statusCode: 409,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Academic Semester Already Exist !',
+  stack: 'Error: Academic Semester Already Exist !\n' +
+    '    at model.<anonymous> (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:30:11)\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:29:17.966Z'
+}
+{
+  statusCode: 409,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Academic semester is already exist !',
+  stack: 'Error: Academic semester is already exist !\n' +
+    '    at model.<anonymous> (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:29:11)\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:36:43.366Z'
+}
+{
+  statusCode: 409,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Academic semester is already exist !',
+  stack: 'Error: Academic semester is already exist !\n' +
+    '    at model.<anonymous> (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:29:11)\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.model.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:40:36.031Z'
+}
+{
+  message: 'UnHandle Rejection are detected,We are closing our server now ....',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:49:29.801Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Invalid Semester Code !',
+  stack: 'Error: Invalid Semester Code !\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:22:11\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:4:12)\n' +
+    '    at Object.createAcademicSemester (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:20:33)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:16:37\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:8:71\n' +
+    '    at new Promise (<anonymous>)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:51:13.322Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Invalid Semester Code !',
+  stack: 'Error: Invalid Semester Code !\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:22:11\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:4:12)\n' +
+    '    at Object.createAcademicSemester (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:20:33)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:16:37\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:8:71\n' +
+    '    at new Promise (<anonymous>)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:51:27.570Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  message: 'UnCaught Exception is Detected... Invalid Semester Code !',
+  stack: 'Error: Invalid Semester Code !\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:22:11\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:4:12)\n' +
+    '    at Object.createAcademicSemester (F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.service.ts:20:33)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:16:37\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at F:\\Level2\\University-Management\\university-management-auth-service\\src\\app\\modules\\academicSemester\\academicSemester.controler.ts:8:71\n' +
+    '    at new Promise (<anonymous>)',
+  label: 'right meow!',
+  timestamp: '2024-03-02T09:52:19.040Z'
+}

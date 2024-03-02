@@ -10,7 +10,10 @@ router.post(
   validateRequest(AcademicSemesterValidation.createAcademicSemesterZodSchema),
   AcademicSemesterController.createAcademicSemester,
 )
-
+router.get(
+  '/get-single-academic-semester/:id',
+  AcademicSemesterController.getSingleAcademicSemester,
+)
 router.get(
   '/get-all-academic-semesters',
   AcademicSemesterController.getAllSemesters,

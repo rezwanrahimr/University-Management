@@ -28,15 +28,17 @@ async function main() {
   }
 
   // Handle UnHandled Rejection
-  /*  process.on("unhandledRejection", error => {
-    errorLogger.error("UnHandle Rejection are detected,We are closing our server now ....");
+  /*  process.on('unhandledRejection', error => {
+    errorLogger.error(
+      'UnHandle Rejection are detected,We are closing our server now ....',
+    )
     if (server) {
       server.close(() => {
-        errorLogger.error(error);
-        process.exit(1);
+        errorLogger.error(error)
+        process.exit(1)
       })
     } else {
-      process.exit(1);
+      process.exit(1)
     }
   }) */
 }
