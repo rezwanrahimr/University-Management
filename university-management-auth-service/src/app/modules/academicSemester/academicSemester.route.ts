@@ -16,8 +16,12 @@ router.get(
 )
 router.patch(
   '/update-academic-semester/:id',
-  validateRequest(AcademicSemesterValidation.createAcademicSemesterZodSchema),
+  validateRequest(AcademicSemesterValidation.updateAcademicSemesterZodSchema),
   AcademicSemesterController.updateAcademicSemester,
+)
+router.delete(
+  '/delete-academic-semester/:id',
+  AcademicSemesterController.deleteAcademicSemester,
 )
 router.get(
   '/get-all-academic-semesters',

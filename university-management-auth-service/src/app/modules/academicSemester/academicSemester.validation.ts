@@ -23,4 +23,37 @@ const createAcademicSemesterZodSchema = z.object({
   }),
 })
 
-export const AcademicSemesterValidation = { createAcademicSemesterZodSchema }
+const updateAcademicSemesterZodSchema = z.object({
+  body: z
+    .object({
+      title: z
+        .enum([...academicSemesterTitle] as [string, ...string[]], {
+          required_error: 'Title is Require',
+        })
+        .optional(),
+      year: z.string({ required_error: 'Year is Require' }).optional(),
+      code: z
+        .enum([...academicSemesterCode] as [string, ...string[]], {
+          required_error: 'Code is Require',
+        })
+        .optional(),
+      startMonth: z
+        .enum([...academicSemesterMonth] as [string, ...string[]], {
+          required_error: 'Start-Month is Require',
+        })
+        .optional(),
+      endMonth: z
+        .enum([...academicSemesterMonth] as [string, ...string[]], {
+          required_error: 'End-Month is Required',
+        })
+        .optional(),
+    })
+    .refine(data => (data.title && data.code) || (!data.title && !data.code), {
+      message: 'either title & code should be provided or neither',
+    }),
+})
+
+export const AcademicSemesterValidation = {
+  createAcademicSemesterZodSchema,
+  updateAcademicSemesterZodSchema,
+}
