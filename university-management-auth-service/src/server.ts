@@ -6,7 +6,7 @@ import { Server } from 'http'
 
 // Handle UnCaught Exception
 process.on('uncaughtException', error => {
-  errorLogger.error('UnCaught Exception is Detected...', error)
+  errorLogger.error(error)
   process.exit(1)
 })
 
@@ -28,10 +28,7 @@ async function main() {
   }
 
   // Handle UnHandled Rejection
-  /*  process.on('unhandledRejection', error => {
-    errorLogger.error(
-      'UnHandle Rejection are detected,We are closing our server now ....',
-    )
+  process.on('unhandledRejection', error => {
     if (server) {
       server.close(() => {
         errorLogger.error(error)
@@ -40,15 +37,15 @@ async function main() {
     } else {
       process.exit(1)
     }
-  }) */
+  })
 }
 
 main()
 
 //
-process.on('SIGTERM', () => {
+/* process.on('SIGTERM', () => {
   logger.info('SIGTERM is Received')
   if (server) {
     server.close()
   }
-})
+}) */
