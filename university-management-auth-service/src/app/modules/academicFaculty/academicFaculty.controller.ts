@@ -6,6 +6,8 @@ import { IAcademicFaculty } from './academicFaculty.interface'
 import httpStatus from 'http-status'
 import { AcademicFacultyModel } from './academicFaculty.model'
 import ApiError from '../../../errors/ApiError'
+import pick from '../../../shared/pick'
+import { paginationFields } from '../../../constants/pagination'
 
 const createAcademicFaculty = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -38,4 +40,19 @@ const createAcademicFaculty = catchAsync(
   },
 )
 
-export const AcademicFacultyController = { createAcademicFaculty }
+const getAllAcademicFaculty = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const paginationOptions = pick(req.query, paginationFields)
+      const result =
+        await AcademicFacultyService.getAllAcademicFaculty(paginationOptions)
+    } catch (error) {
+      next(error)
+    }
+  },
+)
+
+export const AcademicFacultyController = {
+  createAcademicFaculty,
+  getAllAcademicFaculty,
+}

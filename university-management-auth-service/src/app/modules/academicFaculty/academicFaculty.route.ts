@@ -10,4 +10,9 @@ router.post(
   AcademicFacultyController.createAcademicFaculty,
 )
 
+router.get(
+  '/get-all-academic-faculty',
+  AcademicFacultyController.getAllAcademicFaculty,
+)
+
 export default router
