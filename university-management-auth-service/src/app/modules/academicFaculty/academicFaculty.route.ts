@@ -10,6 +10,11 @@ router.post(
   AcademicFacultyController.createAcademicFaculty,
 )
 
+router.patch(
+  '/update-academic-faculty/:id',
+  AcademicFacultyController.updateAcademicFaculty,
+)
+
 router.get(
   '/get-single-academic-faculty/:id',
   AcademicFacultyController.getSingleAcademicFaculty,

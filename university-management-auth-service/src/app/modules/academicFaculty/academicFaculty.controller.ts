@@ -76,8 +76,32 @@ const getSingleAcademicFaculty = catchAsync(
   },
 )
 
+const updateAcademicFaculty = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params
+      const { ...updateData } = req.body
+      const result = await AcademicFacultyService.updateAcademicFaculty(
+        id,
+        updateData,
+      )
+
+      sendResponse<IAcademicFaculty[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Faculty Update success',
+        meta: result.meta,
+        data: result,
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+)
+
 export const AcademicFacultyController = {
   createAcademicFaculty,
   getAllAcademicFaculty,
   getSingleAcademicFaculty,
+  updateAcademicFaculty,
 }
