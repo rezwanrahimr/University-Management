@@ -11,6 +11,11 @@ router.post(
 )
 
 router.get(
+  '/get-single-academic-faculty/:id',
+  AcademicFacultyController.getSingleAcademicFaculty,
+)
+
+router.get(
   '/get-all-academic-faculty',
   AcademicFacultyController.getAllAcademicFaculty,
 )

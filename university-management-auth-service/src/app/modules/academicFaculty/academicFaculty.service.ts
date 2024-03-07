@@ -35,7 +35,13 @@ const getAllAcademicFaculty = async (options: IPagination) => {
   }
 }
 
+const getSingleAcademicFaculty = async (id: string) => {
+  const result = await AcademicFacultyModel.findById(id)
+  return result
+}
+
 export const AcademicFacultyService = {
   createAcademicFaculty,
   getAllAcademicFaculty,
+  getSingleAcademicFaculty,
 }

@@ -1,0 +1,25 @@
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Database Connect Fail connection 1 to 3.111.72.252:27017 timed out',
+  stack: 'MongoNetworkTimeoutError: connection 1 to 3.111.72.252:27017 timed out\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\node_modules\\mongodb\\src\\cmap\\connection.ts:323:26)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  label: 'right meow!',
+  timestamp: '2024-03-07T17:33:22.436Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+  [Symbol(beforeHandshake)]: true
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.n9lcqj8.mongodb.net',
+  level: 'error',
+  message: 'Database Connect Fail querySrv ETIMEOUT _mongodb._tcp.cluster0.n9lcqj8.mongodb.net',
+  stack: 'Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.n9lcqj8.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:275:17)',
+  label: 'right meow!',
+  timestamp: '2024-03-07T17:35:51.899Z'
+}
