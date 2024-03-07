@@ -26,7 +26,6 @@ const createAcademicFaculty = catchAsync(
 
       const result =
         await AcademicFacultyService.createAcademicFaculty(academicFacultyData)
-      console.log('test data', result)
       sendResponse<IAcademicFaculty[]>(res, {
         statusCode: httpStatus.OK,
         success: true,
@@ -46,6 +45,13 @@ const getAllAcademicFaculty = catchAsync(
       const paginationOptions = pick(req.query, paginationFields)
       const result =
         await AcademicFacultyService.getAllAcademicFaculty(paginationOptions)
+      sendResponse<IAcademicFaculty[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Faculty Retrieved success',
+        meta: result.meta,
+        data: result.data,
+      })
     } catch (error) {
       next(error)
     }
