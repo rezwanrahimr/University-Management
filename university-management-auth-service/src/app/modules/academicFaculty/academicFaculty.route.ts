@@ -20,6 +20,10 @@ router.get(
   AcademicFacultyController.getSingleAcademicFaculty,
 )
 
+router.delete(
+  '/delete-academic-faculty/:id',
+  AcademicFacultyController.deleteAcademicFaculty,
+)
 router.get(
   '/get-all-academic-faculty',
   AcademicFacultyController.getAllAcademicFaculty,

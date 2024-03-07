@@ -45,9 +45,15 @@ const updateAcademicFaculty = async (id: string, payload: IAcademicFaculty) => {
   return result
 }
 
+const deleteAcademicFaculty = async (id: string) => {
+  const result = await AcademicFacultyModel.findByIdAndDelete(id)
+  return result
+}
+
 export const AcademicFacultyService = {
   createAcademicFaculty,
   getAllAcademicFaculty,
   getSingleAcademicFaculty,
   updateAcademicFaculty,
+  deleteAcademicFaculty,
 }
