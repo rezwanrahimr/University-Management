@@ -13,4 +13,9 @@ router.post(
   AcademicDepartmentController.createAcademicDepartment,
 )
 
+router.get(
+  '/get-academic-department',
+  AcademicDepartmentController.getAcademicDepartment,
+)
+
 export default router

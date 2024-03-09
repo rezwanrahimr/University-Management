@@ -4,3 +4,6 @@ export type IAcademicDepartment = {
   title: string
   academicFaculty: string | IAcademicFaculty
 }
+export type IAcademicDepartmentFilters = {
+  searchTerm?: string
+}

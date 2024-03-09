@@ -124,6 +124,11 @@
             "date": 1709974862380,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-09-15.log",
             "hash": "4f677a899dbdec89011bac7f951ff2b2b79c8f27396b8577e8dd05e0eee520f7"
+        },
+        {
+            "date": 1709978655811,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-09-16.log",
+            "hash": "a761d43e65a3627e9540e918cf33496aafa0865574137dd2c92c7a0a9bce7e9b"
         }
     ],
     "hashType": "sha256"
