@@ -99,6 +99,31 @@
             "date": 1709834571143,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-08-00.log",
             "hash": "60f283b4e939dd70e1fefdb90bc162444eca7260399fbd5696b835d4b4b6a510"
+        },
+        {
+            "date": 1709907258527,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-08-20.log",
+            "hash": "6f97be90a6582d0ef50ceef2d64b5ec7bdd8b14c5403663eb92ea8d4bdadc327"
+        },
+        {
+            "date": 1709958629881,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-09-10.log",
+            "hash": "bfcab6bdc6cf6c259cc3a5710c82cbfdc3334cd4465441b1c4702c063c7cdfd7"
+        },
+        {
+            "date": 1709963891802,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-09-11.log",
+            "hash": "62b449008cafc8785817b25ac606cebd0172fd7dd9c554076be570394635e188"
+        },
+        {
+            "date": 1709974006523,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-09-14.log",
+            "hash": "5e41d480351af23afbe56a8563e47e9efde82a5871d24f854d37fedcddec2f2c"
+        },
+        {
+            "date": 1709974862356,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-03-09-15.log",
+            "hash": "57e49975075372a32db6f5fd5cae25f24394d02c6ca394f9ae5345d61e46ae17"
         }
     ],
     "hashType": "sha256"
