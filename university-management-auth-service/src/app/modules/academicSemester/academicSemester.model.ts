@@ -11,13 +11,26 @@ import {
 import ApiError from '../../../errors/ApiError'
 import httpStatus from 'http-status'
 
-const academicSemesterSchema = new Schema<IAcademicSemester>({
-  title: { type: String, required: true, enum: academicSemesterTitle },
-  year: { type: String, required: true },
-  code: { type: String, required: true, enum: academicSemesterCode },
-  startMonth: { type: String, required: true, enum: academicSemesterMonth },
-  endMonth: { type: String, required: true, enum: academicSemesterMonth },
-})
+const academicSemesterSchema = new Schema<IAcademicSemester>(
+  {
+    title: { type: String, required: true, enum: academicSemesterTitle },
+    year: { type: String, required: true },
+    code: { type: String, required: true, enum: academicSemesterCode },
+    startMonth: { type: String, required: true, enum: academicSemesterMonth },
+    endMonth: { type: String, required: true, enum: academicSemesterMonth },
+    syncId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  },
+)
 
 // check is semester is already exist
 academicSemesterSchema.pre('save', async function (next) {
