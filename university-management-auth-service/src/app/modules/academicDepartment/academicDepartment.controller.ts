@@ -37,6 +37,48 @@ const createAcademicDepartment = catchAsync(
   },
 )
 
+const updateAcademicDepartment = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params
+      const { ...updateData } = req.body
+      const result = await AcademicDepartmentService.updateAcademicDepartment(
+        id,
+        updateData,
+      )
+      sendResponse<IAcademicDepartment[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Department Update success',
+        meta: result?.meta,
+        data: result,
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+)
+
+const getSingleAcademicDepartment = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id
+      const result =
+        await AcademicDepartmentService.getSingleAcademicDepartment(id)
+      console.log(result)
+      sendResponse<IAcademicDepartment[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Single Academic Department Retrieved success',
+        // meta: result.meta,
+        data: result,
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+)
+
 const getAcademicDepartment = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -59,7 +101,28 @@ const getAcademicDepartment = catchAsync(
   },
 )
 
+const deleteAcademicDepartment = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params
+      const result =
+        await AcademicDepartmentService.deleteAcademicDepartment(id)
+      sendResponse<IAcademicDepartment[]>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Academic Department Delete success',
+        data: result,
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+)
+
 export const AcademicDepartmentController = {
   createAcademicDepartment,
+  updateAcademicDepartment,
+  getSingleAcademicDepartment,
   getAcademicDepartment,
+  deleteAcademicDepartment,
 }

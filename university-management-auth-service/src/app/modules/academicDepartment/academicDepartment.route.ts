@@ -13,6 +13,24 @@ router.post(
   AcademicDepartmentController.createAcademicDepartment,
 )
 
+router.patch(
+  '/update-academic-department/:id',
+  validateRequest(
+    AcademicDepartmentValidation.updateAcademicDepartmentZodSchema,
+  ),
+  AcademicDepartmentController.updateAcademicDepartment,
+)
+
+router.get(
+  '/get-single-academic-department/:id',
+  AcademicDepartmentController.getSingleAcademicDepartment,
+)
+
+router.delete(
+  '/delete-academic-department/:id',
+  AcademicDepartmentController.deleteAcademicDepartment,
+)
+
 router.get(
   '/get-academic-department',
   AcademicDepartmentController.getAcademicDepartment,

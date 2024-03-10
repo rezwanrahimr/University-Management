@@ -14,6 +14,23 @@ const createAcademicDepartment = async (payload: IAcademicDepartment) => {
   return populatedResult
 }
 
+const updateAcademicDepartment = async (
+  id: string,
+  payload: IAcademicDepartment,
+) => {
+  const result = await AcademicDepartmentModel.findByIdAndUpdate(
+    id,
+    payload,
+  ).populate('academicFaculty')
+  return result
+}
+
+const getSingleAcademicDepartment = async (id: string) => {
+  const result =
+    await AcademicDepartmentModel.findById(id).populate('academicFaculty')
+  return result
+}
+
 const getAcademicDepartment = async (
   filters: IAcademicDepartmentFilters,
   paginationOptions: IPagination,
@@ -69,7 +86,15 @@ const getAcademicDepartment = async (
   }
 }
 
+const deleteAcademicDepartment = async (id: string) => {
+  const result = await AcademicDepartmentModel.findByIdAndDelete(id)
+  return result
+}
+
 export const AcademicDepartmentService = {
   createAcademicDepartment,
+  updateAcademicDepartment,
+  getSingleAcademicDepartment,
   getAcademicDepartment,
+  deleteAcademicDepartment,
 }
