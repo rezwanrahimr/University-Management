@@ -16,6 +16,15 @@ const createUserZodSchema = z.object({
           required_error: 'last name is required',
         }),
       }),
+      dateOfBirth: z.string({
+        required_error: 'date of birth',
+      }),
+      gender: z.enum(['Male', 'Female'], {
+        required_error: 'gender is required',
+      }),
+      bloodGroup: z
+        .enum(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
+        .optional(),
     }),
   }),
 })
