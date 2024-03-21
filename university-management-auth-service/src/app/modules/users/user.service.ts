@@ -1,27 +1,56 @@
+import mongoose from 'mongoose'
 import config from '../../../config'
+import { AcademicSemester } from '../academicSemester/academicSemester.model'
+import { IStudent } from '../student/student.interface'
 import { IUser } from './user.interface'
 import { User } from './user.model'
 import { generateStudentId } from './user.utils'
+import { StudentModel } from '../student/student.model'
+import ApiError from '../../../errors/ApiError'
+import httpStatus from 'http-status'
 
-const createUser = async (user: IUser): Promise<IUser | null> => {
-  const academicSemester = {
-    code: '01',
-    year: '2025',
-  }
-  //auto generate increment id
-  const id = await generateStudentId(academicSemester)
-  user.id = id
-
+const newStudent = async (
+  student: IStudent,
+  user: IUser,
+): Promise<IUser | null> => {
   // set default password
   if (!user.password) {
-    user.password = config.default_user_password as string
+    user.password = config.default_student_password as string
   }
 
-  const createUser = await User.create(user)
-  if (!createUser) {
-    throw new Error('Fail to create user')
+  // set role
+  user.role = 'student'
+
+  const academicSemester = await AcademicSemester.findById(
+    student.academicSemester,
+  )
+
+  const session = await mongoose.startSession()
+  try {
+    session.startTransaction()
+    // generate student id
+    const id = await generateStudentId(academicSemester)
+    user.id = id
+    student.id = id
+
+    const newStudent = await StudentModel.create([student], { session })
+    if (!newStudent.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Fail to create student')
+    }
+
+    user.student = newStudent[0]._id
+    const newUser = await User.create([user], { session })
+    if (!newUser.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Fail to create user')
+    }
+
+    await session.commitTransaction()
+    await session.endSession()
+  } catch (error) {
+    await session.abortTransaction()
+    await session.endSession()
+    throw error
   }
-  return createUser
 }
 
-export const UserService = { createUser }
+export const UserService = { newStudent }

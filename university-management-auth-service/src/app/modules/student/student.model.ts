@@ -114,7 +114,6 @@ export const studentSchema = new Schema<IStudent>({
   },
   profileImage: {
     type: String,
-    required: true,
   },
   academicFaculty: {
     type: Schema.Types.ObjectId,

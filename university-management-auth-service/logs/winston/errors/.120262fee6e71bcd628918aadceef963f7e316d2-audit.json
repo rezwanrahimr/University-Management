@@ -6,41 +6,6 @@
     "auditLog": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\.120262fee6e71bcd628918aadceef963f7e316d2-audit.json",
     "files": [
         {
-            "date": 1709394400383,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-02-21.log",
-            "hash": "9970d3c7cfee123e82fd48723b7dcba6cfb01012131b3679331687ef69277ece"
-        },
-        {
-            "date": 1709395219577,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-02-22.log",
-            "hash": "01afd4d06c34d126830ff7b65375c3bb12af1785d4a11c3ca9ebbad32ffadddc"
-        },
-        {
-            "date": 1709401401932,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-02-23.log",
-            "hash": "3a0b49f2fb1374f6479d48d192b0ee30771a8e5a3866af719e0060dd275739a8"
-        },
-        {
-            "date": 1709402497531,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-03-00.log",
-            "hash": "3d036096247b8c55df4273642c9cca31e578686fc303b905a562acafc2712071"
-        },
-        {
-            "date": 1709480681572,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-03-21.log",
-            "hash": "8ea6c34c42aee67fa9d12487bee15ed86110a07c82be0032fdc9f544c10a53f4"
-        },
-        {
-            "date": 1709484769924,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-03-22.log",
-            "hash": "4db610fff1e102774f8c272ffbb9d45d241ada162658aabe94e87647ecf295c3"
-        },
-        {
-            "date": 1709485218853,
-            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-03-23.log",
-            "hash": "268da27c669dd7c0073dfb8e8ef3485815ef780bb0c197e6c17a21b2879ad806"
-        },
-        {
             "date": 1709828892405,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-07-22.log",
             "hash": "e99faf234d6aea629f836f885354ff3426712caed7f409ed369ac27fcad4d385"
@@ -104,6 +69,21 @@
             "date": 1710519739887,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-15-22.log",
             "hash": "3be500b0b5a213f22716aa58c18fc67130a774fcc692bbd9d3f77a95760d814f"
+        },
+        {
+            "date": 1711029885041,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-21-20.log",
+            "hash": "74ba88e134a9df96211e86bc4f68aa45eb584f87f80d941dc1aa19b8c4caa71f"
+        },
+        {
+            "date": 1711033933087,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-21-21.log",
+            "hash": "18ba359567fe9af8ebc80be9c85dfb8c5b2e9eb1a469e8ec073e240662f7f684"
+        },
+        {
+            "date": 1711038146663,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-03-21-22.log",
+            "hash": "5e25cdbb6c99e3119f6db766063e4dabbffad1479986403a78bd631f7fb3e8a4"
         }
     ],
     "hashType": "sha256"
