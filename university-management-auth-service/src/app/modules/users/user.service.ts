@@ -12,7 +12,7 @@ import httpStatus from 'http-status'
 const newStudent = async (
   student: IStudent,
   user: IUser,
-): Promise<IUser | null> => {
+): Promise<IUser | null | void> => {
   // set default password
   if (!user.password) {
     user.password = config.default_student_password as string

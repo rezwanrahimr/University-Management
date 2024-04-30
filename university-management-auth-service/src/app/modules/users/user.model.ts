@@ -20,14 +20,14 @@ const userSchema = new Schema<IUser>(
       type: Schema.Types.ObjectId,
       ref: 'student',
     },
-    faculty: {
-      type: Schema.Types.ObjectId,
-      ref: 'faculty',
-    },
-    admin: {
-      type: Schema.Types.ObjectId,
-      ref: 'admin',
-    },
+    // faculty: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'faculty',
+    // },
+    // admin: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'admin',
+    // },
   },
   { timestamps: true },
 )
