@@ -20,6 +20,7 @@ const userSchema = new Schema<IUser>(
       type: Schema.Types.ObjectId,
       ref: 'student',
     },
+
     // faculty: {
     //   type: Schema.Types.ObjectId,
     //   ref: 'faculty',

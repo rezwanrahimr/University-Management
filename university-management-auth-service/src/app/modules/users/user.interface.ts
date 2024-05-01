@@ -6,8 +6,8 @@ export type IUser = {
   role: string
   password: string
   student?: Types.ObjectId | IStudent
-  /*   faculty?: Types.ObjectId
-  admin?: Types.ObjectId */
+  faculty?: Types.ObjectId
+  admin?: Types.ObjectId
 }
 
 export type userModel = Model<IUser, object>

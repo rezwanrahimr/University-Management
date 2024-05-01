@@ -1,0 +1,25 @@
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'user@gmail.com' },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-01T06:49:30.833Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-01T06:51:32.091Z'
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'user@gmail.com' },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-01T06:56:47.834Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}

@@ -2,11 +2,11 @@
   message: 'University Management Auth Service Database Connect Successfully',
   level: 'info',
   label: 'right meow!',
-  timestamp: '2024-03-15T09:46:55.623Z'
+  timestamp: '2024-05-01T05:55:43.039Z'
 }
 {
   message: 'University Management Auth Service listening on port 5000',
   level: 'info',
   label: 'right meow!',
-  timestamp: '2024-03-15T09:46:55.649Z'
+  timestamp: '2024-05-01T05:55:43.071Z'
 }
