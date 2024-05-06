@@ -29,6 +29,26 @@
             "date": 1714568784947,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-05-01-19.log",
             "hash": "168a1df92a5db29e578d19a377736550786d159152d0b838fc5e1e70871a2bbb"
+        },
+        {
+            "date": 1715002567607,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-05-06-19.log",
+            "hash": "ba7ce4c0a86d49022f0d6fb7c26a28ff0e3a0ef52ce2135d9e4a547f815ac113"
+        },
+        {
+            "date": 1715005947227,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-05-06-20.log",
+            "hash": "5c724a28571d5e8a901d817191e6bef1948d4c2cb93da296b80b676feec94991"
+        },
+        {
+            "date": 1715010601570,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-05-06-21.log",
+            "hash": "6ce1d2035d6ef96ea32daabf7575723d01dc903eee2fd7003a3c7d8b03e0c002"
+        },
+        {
+            "date": 1715011579878,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\errors\\University-Auth-Error-2024-05-06-22.log",
+            "hash": "5a7d61c71429eb23240e4533709e5d97f0762098828299626a471cfb7667fdec"
         }
     ],
     "hashType": "sha256"

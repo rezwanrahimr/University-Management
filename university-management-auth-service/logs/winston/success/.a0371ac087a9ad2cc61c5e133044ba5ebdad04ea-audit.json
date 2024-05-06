@@ -29,6 +29,26 @@
             "date": 1714568784934,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-01-19.log",
             "hash": "df96e9b722312394b0815966dfbc2e69576e090a3ad289d9b805188cc6176b73"
+        },
+        {
+            "date": 1715002567588,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-06-19.log",
+            "hash": "65beb848decba7630e976a5a370eec8445d84ad8ca7548449dedc7dae56b3019"
+        },
+        {
+            "date": 1715005947211,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-06-20.log",
+            "hash": "4aba365330ee4fffbc67f8c5d306b6395de7002e1bb91b7c232b8f6ee2c352ab"
+        },
+        {
+            "date": 1715010601458,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-06-21.log",
+            "hash": "0631c763ecb297afc22bdc2e15d5790624a332d4c35227488009624087a74001"
+        },
+        {
+            "date": 1715011579861,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-06-22.log",
+            "hash": "35ba4ab951e06b04d5d5f23412a4b7ebfdd712a8b49a80c174c63a9812419a9b"
         }
     ],
     "hashType": "sha256"

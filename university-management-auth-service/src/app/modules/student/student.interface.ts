@@ -33,3 +33,7 @@ export type IStudent = {
   academicSemester?: object
   academicFaculty?: object
 }
+
+export type IAcademicStudentFilters = {
+  searchTerm?: string
+}
