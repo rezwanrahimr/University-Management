@@ -71,8 +71,29 @@ const deleteStudent = async (
     next(error)
   }
 }
+
+const updateStudent = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const { id } = req.params
+    const payload = req.body
+    const student = await StudentService.updateStudent(id, payload)
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'student update success',
+      data: student,
+    })
+  } catch (error) {
+    next(error)
+  }
+}
 export const StudentController = {
   getAllStudent,
   getSingleStudent,
   deleteStudent,
+  updateStudent,
 }

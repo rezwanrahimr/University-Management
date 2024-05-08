@@ -1,3 +1,5 @@
+import httpStatus from 'http-status'
+import ApiError from '../../../errors/ApiError'
 import { PaginationHelper } from '../../../helpers/paginationHelper'
 import { IGenericResponse } from '../../../interfaces/common'
 import { IPagination } from '../../../interfaces/paginations'
@@ -79,4 +81,59 @@ const deleteStudent = async (id: string) => {
   }
 }
 
-export const StudentService = { getAllStudent, getSingleStudent, deleteStudent }
+const updateStudent = async (
+  id: string,
+  payload: Partial<IStudent>,
+): Promise<IStudent> => {
+  const isExist = await StudentModel.findById(id)
+
+  if (isExist) {
+    const { name, localGuardian, guardian, ...studentData } = payload
+    const updatedStudentData: Partial<IStudent> = { ...studentData }
+
+    // dynamically handling
+    if (name && Object.keys(name).length > 0) {
+      Object.keys(name).forEach(key => {
+        const nameKey = `name.${key}` as keyof Partial<IStudent>
+        ;(updatedStudentData as any)[nameKey] = name[key as keyof typeof name]
+      })
+    }
+
+    if (guardian && Object.keys(guardian).length > 0) {
+      Object.keys(guardian).forEach(key => {
+        const guardianKey = `guardian.${key}` as keyof Partial<IStudent>
+        ;(updatedStudentData as any)[guardianKey] =
+          guardian[key as keyof typeof name]
+      })
+    }
+
+    if (localGuardian && Object.keys(localGuardian).length > 0) {
+      Object.keys(localGuardian).forEach(key => {
+        const localGuardianKey =
+          `localGuardian.${key}` as keyof Partial<IStudent>
+        ;(updatedStudentData as any)[localGuardianKey] =
+          localGuardian[key as keyof typeof name]
+      })
+    }
+
+    const student = await StudentModel.findByIdAndUpdate(
+      { _id: id },
+      updatedStudentData,
+      { new: true },
+    )
+    if (student) {
+      return student
+    } else {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Internal Server Error!')
+    }
+  } else {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Student not found')
+  }
+}
+
+export const StudentService = {
+  getAllStudent,
+  getSingleStudent,
+  deleteStudent,
+  updateStudent,
+}
