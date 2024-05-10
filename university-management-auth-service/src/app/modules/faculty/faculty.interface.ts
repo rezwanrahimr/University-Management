@@ -13,3 +13,6 @@ export type IFaculty = {
   academicFaculty?: object
   profileImage: string
 }
+export type IAcademicFacultyFilters = {
+  searchTerm?: string
+}
