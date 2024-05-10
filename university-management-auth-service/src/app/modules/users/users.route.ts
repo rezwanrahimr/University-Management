@@ -2,7 +2,6 @@ import express from 'express'
 import validateRequest from '../../middlewares/validateRequest'
 import { UserValidation } from './users.validation'
 import { UserController } from './user.controller'
-import { AdminValidation } from '../admin/admin.validation'
 
 const router = express.Router()
 
@@ -20,7 +19,7 @@ router.post(
 
 router.post(
   '/create-admin',
-  validateRequest(AdminValidation.createAdminZodSchema),
+  validateRequest(UserValidation.createAdminZodSchema),
   UserController.createAdmin,
 )
 

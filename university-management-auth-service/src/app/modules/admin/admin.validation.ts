@@ -50,7 +50,7 @@ const updateAdminZodSchema = z.object({
     permanentAddress: z.string().optional(),
     bloodGroup: z.string().optional(),
     profileImage: z.string().optional(),
-    designation: z.string(),
+    designation: z.string().optional(),
     managementDepartment: z.object({}).optional(),
   }),
 })

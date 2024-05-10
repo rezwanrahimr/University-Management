@@ -79,6 +79,16 @@
             "date": 1715320977919,
             "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-10-12.log",
             "hash": "dc5d255e672a561a70c7ba1795f2f93f609eeda901597945c4c22f3220d5449d"
+        },
+        {
+            "date": 1715347505074,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-10-19.log",
+            "hash": "9ebe9584399492c2de2331df4a987c0cc15d39e68a4f713aef6d1911279c1573"
+        },
+        {
+            "date": 1715350123735,
+            "name": "C:\\Users\\Rezwa\\OneDrive\\Documents\\University-Management\\university-management-auth-service\\logs\\winston\\success\\University-Auth-Success-2024-05-10-20.log",
+            "hash": "ab6ff6aa284ada1fab2feb63dca6b24d06ddc2598327665fb5d5249dd9974c1c"
         }
     ],
     "hashType": "sha256"
