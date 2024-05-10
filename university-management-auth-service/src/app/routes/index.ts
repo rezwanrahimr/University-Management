@@ -27,6 +27,9 @@ const moduleRoutes = [
     path: '/student',
     route: StudentRoutes,
   },
+  {
+    path: '/faculty',
+  },
 ]
 
 moduleRoutes.forEach(route => router.use(route.path, route.route))

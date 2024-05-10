@@ -1,0 +1,175 @@
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:24:08.591Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:35:57.664Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:43:27.611Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:46:51.549Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:48:38.119Z'
+}
+{
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-jlyneue-shard-00-00.n9lcqj8.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jlyneue-shard-00-00.n9lcqj8.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 749322145,
+        lastWriteDate: 0,
+        error: MongoNetworkError: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-00.n9lcqj8.mongodb.net
+            at connectionFailureError (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:633:26)
+            at TLSSocket.emit (node:events:518:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-00.n9lcqj8.mongodb.net
+              at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+            errno: -3008,
+            code: 'ENOTFOUND',
+            syscall: 'getaddrinfo',
+            hostname: 'ac-jlyneue-shard-00-00.n9lcqj8.mongodb.net'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-jlyneue-shard-00-01.n9lcqj8.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jlyneue-shard-00-01.n9lcqj8.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 749334135,
+        lastWriteDate: 0,
+        error: MongoNetworkError: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-01.n9lcqj8.mongodb.net
+            at connectionFailureError (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:633:26)
+            at TLSSocket.emit (node:events:518:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-01.n9lcqj8.mongodb.net
+              at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+            errno: -3008,
+            code: 'ENOTFOUND',
+            syscall: 'getaddrinfo',
+            hostname: 'ac-jlyneue-shard-00-01.n9lcqj8.mongodb.net'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-jlyneue-shard-00-02.n9lcqj8.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jlyneue-shard-00-02.n9lcqj8.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 749334141,
+        lastWriteDate: 0,
+        error: MongoNetworkError: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-02.n9lcqj8.mongodb.net
+            at connectionFailureError (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:633:26)
+            at TLSSocket.emit (node:events:518:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: getaddrinfo ENOTFOUND ac-jlyneue-shard-00-02.n9lcqj8.mongodb.net
+              at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+            errno: -3008,
+            code: 'ENOTFOUND',
+            syscall: 'getaddrinfo',
+            hostname: 'ac-jlyneue-shard-00-02.n9lcqj8.mongodb.net'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-vq4m6h-shard-0',
+    maxElectionId: new ObjectId('7fffffff0000000000000022'),
+    maxSetVersion: 14,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:51:08.491Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:55:05.020Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:58:57.223Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T17:59:37.104Z'
+}

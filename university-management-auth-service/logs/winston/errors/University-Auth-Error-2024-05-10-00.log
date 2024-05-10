@@ -1,0 +1,43 @@
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T18:03:18.124Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T18:11:31.062Z'
+}
+{
+  errors: {
+    designation: ValidatorError: Path `designation` is required.
+        at validate (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongoose\lib\schemaType.js:1365:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongoose\lib\schemaType.js:1349:7)
+        at C:\Users\Rezwa\OneDrive\Documents\University-Management\university-management-auth-service\node_modules\mongoose\lib\document.js:2986:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Path `designation` is required.',
+        type: 'required',
+        path: 'designation',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'designation',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'faculty validation failed',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T18:22:00.808Z'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2024-05-09T18:24:56.278Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
