@@ -4,10 +4,16 @@ import { AcademicSemester } from '../academicSemester/academicSemester.model'
 import { IStudent } from '../student/student.interface'
 import { IUser } from './user.interface'
 import { User } from './user.model'
-import { generateFacultyId, generateStudentId } from './user.utils'
+import {
+  generateAdminId,
+  generateFacultyId,
+  generateStudentId,
+} from './user.utils'
 import { StudentModel } from '../student/student.model'
 import { IFaculty } from '../faculty/faculty.interface'
 import { FacultyModel } from '../faculty/faculty.model'
+import { IAdmin } from '../admin/admin.interface'
+import { AdminModel } from '../admin/admin.model'
 
 const createStudent = async (
   student: IStudent,
@@ -108,97 +114,6 @@ const createStudent = async (
   }
 }
 
-// const createFaculty = async (
-//   faculty: IFaculty,
-//   user: IUser,
-// ): Promise<IUser | null | void> => {
-//   try {
-//     console.log('faculty', faculty)
-//     // Set default password
-//     if (!user.password) {
-//       user.password = config.default_faculty_password as string
-//     }
-
-//     // Set role
-//     user.role = 'faculty'
-
-//     // Initialize newUserAllData
-//     let newUserAllData = null
-
-//     // Start transaction
-//     const session = await mongoose.startSession()
-//     session.startTransaction()
-
-//     try {
-//       // Generate faculty id
-//       const id = await generateFacultyId()
-//       console.log('id', id)
-//       user.id = id
-//       faculty.id = id
-
-//       // Create faculty
-//       const newFaculty = await FacultyModel.create([faculty], { session })
-
-//       // Check if student creation failed
-//       if (!newFaculty.length) {
-//         throw new Error('Failed to create faculty')
-//       }
-
-//       // Assign faculty id to user
-//       user.faculty = newFaculty[0]._id
-//     } catch (error) {
-//       // Abort transaction and throw error
-//       await session.abortTransaction()
-//       session.endSession()
-//       throw new Error('Failed to create faculty')
-//     }
-
-//     try {
-//       // Create faculty
-//       const newUser = await User.create([user], { session })
-//       console.log('New user:', newUser)
-
-//       // Check if user creation failed
-//       if (!newUser.length) {
-//         throw new Error('Failed to create user')
-//       }
-
-//       // Assign newUserAllData
-//       newUserAllData = newUser[0]
-//     } catch (error) {
-//       // Abort transaction and throw error
-//       await session.abortTransaction()
-//       session.endSession()
-//       throw new Error('Failed to create user')
-//     }
-
-//     // Commit transaction
-//     await session.commitTransaction()
-//     session.endSession()
-
-//     // Log newUserAllData for debugging
-//     console.log('New user all data:', newUserAllData)
-
-//     // Populate and return newUserAllData
-//     if (newUserAllData) {
-//       newUserAllData = await User.findById({ id: newUserAllData.id })
-//         .populate({
-//           path: 'faculty',
-//           populate: [
-//             { path: 'academicDepartment', options: { strictPopulate: false } },
-//             { path: 'academicFaculty', options: { strictPopulate: false } },
-//           ],
-//         })
-//         .exec()
-//     }
-
-//     return newUserAllData
-//   } catch (error) {
-//     console.error('Error in createFaculty:', error)
-//     throw error
-//   }
-// }
-
 const createFaculty = async (
   faculty: IFaculty,
   user: IUser,
@@ -274,4 +189,72 @@ const createFaculty = async (
   }
 }
 
-export const UserService = { createStudent, createFaculty }
+const createAdmin = async (
+  admin: IAdmin,
+  user: IUser,
+): Promise<IUser | null | void> => {
+  let session
+  try {
+    // Set default password
+    if (!user.password) {
+      user.password = config.default_admin_password as string
+    }
+
+    // Set role
+    user.role = 'admin'
+
+    // Start transaction
+    session = await mongoose.startSession()
+    session.startTransaction()
+
+    // Generate Admin id
+    const id = await generateAdminId()
+    user.id = id
+    admin.id = id
+
+    // Create admin
+    const newAdmin = await AdminModel.create([admin], { session })
+
+    // Check if admin creation failed
+    if (!newAdmin.length) {
+      throw new Error('Failed to create admin')
+    }
+
+    // Assign admin id to user
+    user.admin = newAdmin[0]._id
+
+    // Create user
+    const newUser = await User.create([user], { session })
+
+    // Check if user creation failed
+    if (!newUser.length) {
+      throw new Error('Failed to create user')
+    }
+
+    // Commit transaction
+    await session.commitTransaction()
+    session.endSession()
+
+    // Populate and return newUserAllData
+    const newUserAllData = await User.findById(newUser[0]._id)
+      .populate({
+        path: 'admin',
+        populate: [
+          { path: 'managementDepartment', options: { strictPopulate: false } },
+        ],
+      })
+      .exec()
+
+    return newUserAllData
+  } catch (error) {
+    console.error('Error in createAdmin:', error)
+    // If a session exists, abort the transaction
+    if (session) {
+      await session.abortTransaction()
+      session.endSession()
+    }
+    throw error
+  }
+}
+
+export const UserService = { createStudent, createFaculty, createAdmin }
