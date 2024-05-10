@@ -3,6 +3,10 @@ import cors from 'cors'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import routes from './app/routes/index'
 import httpStatus from 'http-status'
+import {
+  generateFacultyId,
+  generateStudentId,
+} from './app/modules/users/user.utils'
 const app = express()
 
 // middleware
@@ -37,4 +41,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next()
 })
 
+const generateStudentTest = async () => {
+  const testId = generateFacultyId()
+  console.log('test id', testId)
+}
+generateStudentTest()
 export default app

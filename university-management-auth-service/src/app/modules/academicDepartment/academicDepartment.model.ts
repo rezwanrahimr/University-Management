@@ -3,13 +3,28 @@ import { IAcademicDepartment } from './academicDepartment.interface'
 
 const academicDepartmentSchema = new Schema<IAcademicDepartment>(
   {
-    title: { type: String, required: true, unique: true },
+    title: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     academicFaculty: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'AcademicFaculty',
+      required: true,
+    },
+    // syncId: {
+    //   type: String,
+    //   required: true,
+    //   unique: true,
+    // },
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
     },
   },
-  { strict: false },
 )
 
 // 3. Create a Model.

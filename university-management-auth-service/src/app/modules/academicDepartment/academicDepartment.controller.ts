@@ -14,7 +14,8 @@ const createAcademicDepartment = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { ...departmentData } = req.body
-      const { title } = departmentData
+      console.log(departmentData);
+      const { title } = departmentData;
       const isExist = await AcademicDepartmentModel.findOne({ title })
       if (isExist) {
         throw new ApiError(
@@ -24,6 +25,7 @@ const createAcademicDepartment = catchAsync(
       }
       const result =
         await AcademicDepartmentService.createAcademicDepartment(departmentData)
+      console.log(result);
       sendResponse<IAcademicDepartment[]>(res, {
         statusCode: httpStatus.OK,
         success: true,

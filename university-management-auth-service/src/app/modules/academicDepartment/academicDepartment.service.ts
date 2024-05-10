@@ -9,7 +9,9 @@ import {
 import { AcademicDepartmentModel } from './academicDepartment.model'
 
 const createAcademicDepartment = async (payload: IAcademicDepartment) => {
+  console.log("payload:", payload);
   const result = await AcademicDepartmentModel.create(payload)
+  console.log(result);
   const populatedResult = await result.populate('academicFaculty')
   return populatedResult
 }
